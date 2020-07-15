@@ -40,8 +40,8 @@ namespace Eplayers.Models {
         /// <summary>
         /// Deleta uma equipe
         /// </summary>
-        /// <param name="Delete Equipe"></param>
-        public void Delete (int idEquipe) {
+        /// <param name="idEquipe"></param>
+        public void Delete(int IdEquipe) {
             List<string> linhas = ReadAllLinesCSV (PATH);
             linhas.RemoveAll (y => y.Split (";") [0] == IdEquipe.ToString ());
             RewriteCSV (PATH, linhas);

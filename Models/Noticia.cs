@@ -25,11 +25,11 @@ namespace Eplayers.Models {
         }
 
         public void Create (Noticia e) {
-            string[] linha = { Prepare (e) };
+            string[] linha = { PrepararLinha (e) };
             File.AppendAllLines (PATH, linha);
         }
 
-        private string Prepare (Noticia e) {
+        private string PrepararLinha (Noticia e) {
             return $"{e.IdNoticia};{e.Titulo};{e.Texto};{e.Imagem}";
         }
         public void Delete (int IdNoticia) {
@@ -47,7 +47,7 @@ namespace Eplayers.Models {
                 noticia.IdNoticia = Int32.Parse (linha[0]);
                 noticia.Titulo = linha[1];
                 noticia.Texto = linha[2];
-                noticia.Imagem = linha[3];
+                noticia.Imagem = linha[2];
 
                 noticias.Add (noticia);
             }
@@ -57,7 +57,7 @@ namespace Eplayers.Models {
         public void Update (Noticia e) {
             List<string> linhas = ReadAllLinesCSV (PATH);
             linhas.RemoveAll (y => y.Split (";") [0] == e.IdNoticia.ToString ());
-            linhas.Add (Prepare (e));
+            linhas.Add (PrepararLinha (e));
             RewriteCSV (PATH, linhas);
         }
     }

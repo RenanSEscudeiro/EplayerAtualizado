@@ -53,8 +53,15 @@ namespace Eplayers.Controllers
 
             noticiaModel.Create(noticia);
 
-            ViewBag.Noticias = noticiaModel;
             return LocalRedirect("~/Noticia");
         }
+
+        [Route("Noticia/{id}")]
+        public IActionResult Excluir(int id)
+        {
+            noticiaModel.Delete(id);
+            return LocalRedirect("~/Noticia");
+        }
+
     }
 }
