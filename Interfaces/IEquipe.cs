@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Eplayers.Models;
 
+
 namespace Eplayers.Interfaces {
 
     public interface IEquipe {
