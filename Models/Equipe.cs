@@ -23,7 +23,7 @@ namespace Eplayers.Models {
         /// </summary>
         /// <param name="Create Equipe"></param>
         public void Create (Equipe e) {
-            string[] linha = { Prepare (e) };
+            string[] linha = { PrepararLinha (e) };
             File.AppendAllLines (PATH, linha);
         }
 
@@ -31,7 +31,7 @@ namespace Eplayers.Models {
         /// Preparar estrutura id;nome;imagem
         /// </summary>
         /// <param name="Estrutura"></param>
-        private string Prepare (Equipe e) {
+        private string PrepararLinha (Equipe e) {
             return $"{e.IdEquipe};{e.Nome};{e.Imagem}";
         }
 
@@ -74,7 +74,7 @@ namespace Eplayers.Models {
         public void Update (Equipe e) {
             List<string> linhas = ReadAllLinesCSV (PATH);
             linhas.RemoveAll (y => y.Split (";") [0] == e.IdEquipe.ToString ());
-            linhas.Add (Prepare (e));
+            linhas.Add (PrepararLinha (e));
             RewriteCSV (PATH, linhas);
             //update equipe
         }

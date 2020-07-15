@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Eplayers.Models;
 using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace Eplayers.Controllers
 {
@@ -27,7 +28,28 @@ namespace Eplayers.Controllers
             noticia.IdNoticia = Int32.Parse( form["idNoticia"]);
             noticia.Titulo = form["Titulo"];
             noticia.Texto = form["Texto"];
-            noticia.Imagem = form["Imagem"];
+            // Upload Imagem
+            var file    = form.Files[0];
+            var folder  = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Noticias");
+
+            if(file != null)
+            {
+                if(!Directory.Exists(folder)){
+                    Directory.CreateDirectory(folder);
+                }
+
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/", folder, file.FileName);
+                using (var stream = new FileStream(path, FileMode.Create))  
+                {  
+                    file.CopyTo(stream);  
+                }
+                noticia.Imagem   = file.FileName;
+            }
+            else
+            {
+                noticia.Imagem   = "padrao.png";
+            }
+            // Upload Final
 
             noticiaModel.Create(noticia);
 
