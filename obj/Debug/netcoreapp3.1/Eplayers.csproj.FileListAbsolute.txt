@@ -21,7 +21,6 @@ C:\Users\renan\Desktop\Eplayers\obj\Debug\netcoreapp3.1\Eplayers.TagHelpers.outp
 C:\Users\renan\Desktop\Eplayers\obj\Debug\netcoreapp3.1\Eplayers.RazorCoreGenerate.cache
 C:\Users\renan\Desktop\Eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Equipe\Index.cshtml.g.cs
 C:\Users\renan\Desktop\Eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\renan\Desktop\Eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\renan\Desktop\Eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Noticia\Index.cshtml.g.cs
 C:\Users\renan\Desktop\Eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\renan\Desktop\Eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs

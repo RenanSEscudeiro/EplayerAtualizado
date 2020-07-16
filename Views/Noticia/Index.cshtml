@@ -3,31 +3,44 @@
     ViewData["Title"] = "Noticias";
 }
 
-<form action = "@Url.Action("Cadastrar")"  method="post" enctype="multipart/form-data">
+<div class="titulo_pagina">
+    <h1>cadastro de @ViewData["Title"] </h1>
+</div>
 
-    <label for="IdNoticia"> IdNoticia </label>
+<form class="cadastro" action = "@Url.Action("Cadastrar")"  method="post" enctype="multipart/form-data">
+
+    <div class="campo">
+    <label for="IdNoticia"> Id da Noticia </label>
     <input type="text" name="IdNoticia" id="IdNoticia">
+    </div>
 
-    <label for="Titulo"> Titulo </label>
+    <div class="campo">
+    <label for="Titulo"> Título da Noticia </label>
     <input type="text" name="Titulo" id="Titulo">
+    </div>
 
-    <label for="Texto"> Texto </label>
+    <div class="campo">
+    <label for="Texto"> Texto da Noticia </label>
     <input type="text" name="Texto" id="Texto">
+    </div>
 
-    <label for="Imagem"> Imagem </label>
+    <div class="campo">
+    <label for="Imagem"> Imagem da Noticia </label>
     <input type="file" name="Imagem">
+    </div>
 
-    <button type="submit">Cadastrar</button>
+    <button class="gradient btn" type="submit">Cadastrar</button>
 
 </form>
 
-<table class="table table-responsive table-striped">
+<table>
     
     <thead>
         <th>Id</th>
         <th>Titulo</th>
         <th>Texto</th>
         <th>Imagem</th>
+        <th>Ações</th>
     </thead>
     <tbody>
        @foreach (var item in ViewBag.Noticias)
@@ -36,9 +49,9 @@
                 <td>@item.IdNoticia</td>
                 <td>@item.Titulo</td>
                 <td>@item.Texto</td>
-                <td> <img src="img/Noticias/@item.Imagem" alt="Noticia @item.Imagem" width="40"></td>
+                <td> <img src="img/Noticias/@item.Imagem" alt="Noticia @item.Imagem" width="200"></td>
                 <td>
-                    <a asp-area="" asp-controller="Noticia" asp-action="Excluir" asp-route-id="@item.IdNoticia">Excluir</a>
+                    <a asp-area="" asp-controller="Noticia" asp-action="Excluir" asp-route-id="@item.IdNoticia"> <i class="fa fa-trash"></i></a>
                 </td>
         </tr> 
        }
