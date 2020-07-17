@@ -20526,11 +20526,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\renan\\Desktop\\Eplayers\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\renan\\Desktop\\Eplayers\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
